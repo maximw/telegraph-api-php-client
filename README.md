@@ -21,7 +21,7 @@ The simple PHP client for [telegra.ph](https://telegra.ph) API.
 Via Composer
 
 ``` bash
-$ composer require edamov/telegraph-api-php-client
+$ composer require maximw/telegraph-api-php-client
 ```
 
 ## Getting Started

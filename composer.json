@@ -1,5 +1,5 @@
 {
-    "name": "edamov/telegraph-api-php-client",
+    "name": "maximw/telegraph-api-php-client",
     "type": "library",
     "description": "The simple PHP client for Telegraph API.",
     "keywords": [
@@ -8,13 +8,18 @@
         "php",
         "sdk"
     ],
-    "homepage": "https://github.com/edamov/telegraph-api-php-client",
+    "homepage": "https://github.com/maximw/telegraph-api-php-client",
     "license": "MIT",
     "authors": [
         {
             "name": "Arthur Edamov",
             "email": "edamov@gmail.com",
             "homepage": "https://github.com/edamov",
+            "role": "Developer"
+        },
+        {
+            "name": "Maxim Naguchev",
+            "homepage": "https://github.com/maximw",
             "role": "Developer"
         }
     ],
@@ -25,8 +30,7 @@
     "require-dev": {
         "ext-xdebug": "*",
         "phpunit/phpunit" : "~4.0||~5.0",
-        "squizlabs/php_codesniffer": "^2.3",
-        "satooshi/php-coveralls": "dev-master"
+        "squizlabs/php_codesniffer": "^2.3"
     },
     "autoload": {
         "psr-4": {
@@ -35,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "edamov\\telegraph\\": "tests"
+            "maximw\\telegraph\\": "tests"
         }
     },
     "extra": {
