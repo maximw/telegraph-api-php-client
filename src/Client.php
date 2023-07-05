@@ -41,6 +41,7 @@ class Client
      * @param string $authorName
      * @param string $authorUrl
      * @return Account
+     * @throws RequestException
      */
     public function createAccount(string $shortName, string $authorName = '', string $authorUrl = ''): Account
     {
@@ -61,6 +62,7 @@ class Client
      * @param string $authorName
      * @param string $authorUrl
      * @return Account
+     * @throws RequestException
      */
     public function editAccountInfo(string $accessToken, string $shortName, string $authorName = '', string $authorUrl = ''): Account
     {
@@ -117,6 +119,8 @@ class Client
      * @param string $authorUrl
      * @param bool $returnContent
      * @return Page
+     * @throws InvalidContentTypeException
+     * @throws RequestException
      */
     public function createPage(string $accessToken, string $title, $content, string $authorName = '', string $authorUrl = '', bool $returnContent = false): Page
     {
@@ -226,15 +230,14 @@ class Client
         } elseif (is_array($content)) {
             $result = [];
             foreach ($content as $item) {
-                if (!$item instanceof NodeElement) {
-                    throw new InvalidContentTypeException();
+                if ($item instanceof NodeElement) {
+                    $result[] = $item->toArray();
+                } else {
+                    $result[] = $item;
                 }
-                $result[] = $item->toArray();
             }
-
             return $result;
         }
-
         throw new InvalidContentTypeException();
     }
 }
